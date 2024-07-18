@@ -14,9 +14,10 @@ import jwt
 from cryptography.fernet import Fernet
 
 app = FastAPI()
-
+# modif test ML
 # Constants
 JSON_FILE_PATH = os.path.expanduser("./users/users.json")
+# JSON_FILE_PATH = os.path.expanduser("./users/users.csv")
 SECRET_KEY = Fernet.generate_key()
 ALGORITHM = "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")

@@ -6,7 +6,8 @@ Run the following commands to set up the environment:
 
 ```sh
 python -m venv .venv
-source  .venv/bin/activate
+source  .venv/bin/activate # dans la console linux
+.venv/scripts/activate # dans la console windows
 pip install -r requirements.txt
 ```
 > ** Special attention** : Never install `jwt`and `PyJWT`package at the same time. See [this thread](https://stackoverflow.com/questions/33198428/jwt-module-object-has-no-attribute-encode) on stackoverflow.
