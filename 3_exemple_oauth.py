@@ -23,6 +23,12 @@ ALGORITHM = "HS256"
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
 
 # User Models
+
+# User Models
+class Lien(BaseModel):
+    lien: str
+    
+##    
 class User(BaseModel):
     username: str
     first_name: str
@@ -109,6 +115,15 @@ def preprocess_user_data(user: UserPred):
     return features.reshape(1, -1)
 
 # Endpoints
+
+@app.post("/Scraper", response_model=Lien)
+async def scraper(lien: Lien):
+    Testt= lien
+    # lancer la fonction de webscraping
+    return Testt
+
+##
+
 @app.post("/register", response_model=UserOut)
 async def register(user: User):
     hashed_password = sha256(user.password.encode()).hexdigest()
